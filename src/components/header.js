@@ -335,23 +335,7 @@ export default function Header({ location }) {
                     titre
                   }
 
-                  ... on DatoCmsPageContact {
-                    id
-                    slug
-                    titre
-                  }
-
-                  ... on DatoCmsPageAbout {
-                    id
-                    slug
-                    titre
-                  }
-
-                  ... on DatoCmsPageSpectacle {
-                    id
-                    slug
-                    titre
-                  }
+                 
                  
                 } 
                 
