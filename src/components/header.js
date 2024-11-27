@@ -40,9 +40,10 @@ const Wrapper = styled.div`
   padding: 0 2rem;
   ${mq.mobile`
       height: 8rem;
+      padding: 0;
     `}
-  ${mq.tablet`
-     padding: 0 2rem;
+  ${mq.desktop`
+     padding: 0;
     
     `}
    
@@ -54,6 +55,9 @@ const HeaderInner = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding:  1rem 0;
+   ${mq.mobile`
+     width:  90%;
+    `}
 `;
 
 
@@ -207,7 +211,7 @@ const SubLinkHeader = styled(props => <Link {...props} />)`
 const LogoLink = styled(Link)`
  
   height:100%;
- padding-bottom:1.5rem;
+ padding-bottom:0;
    ${mq.mobile`
       img { 
         height:5rem;

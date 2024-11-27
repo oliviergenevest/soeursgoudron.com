@@ -72,6 +72,7 @@ strong {
   padding-bottom:56.25%; 
   position:relative; 
   height:0;
+   margin: 3.2rem 0;
   }
   
   .video-responsive iframe {
@@ -80,7 +81,7 @@ strong {
     height:100%;
     width:100%;
     position:absolute;
-    margin: 3.2rem 0;
+   
   }
 
 `;

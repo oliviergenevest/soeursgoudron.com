@@ -1,7 +1,7 @@
 import React from "react";
 import { GatsbyImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { colors } from '../consts/style';
+import { colors, mq } from '../consts/style';
 import ModalWindow from "./modal/modal-window";
 import { useModalWithData } from '../hooks/modal-hook.js'
 import { graphql } from "gatsby"
@@ -10,13 +10,16 @@ import Video from "./video.js";
 
 const WrapperPersonnage = styled.div`
     
- 
+ border-radius:.8rem;
     background:white;
     display:inline-flex;
     flex-direction:column;,
-    align-items:center;
+   // align-items:center;
     padding:.8rem;
- // border:1px dashed transparent;
+    margin-bottom: .8rem;
+ ${mq.mobile`
+    flex-basis:45%;
+    `}
     
     span {
         max-width:150px;
@@ -29,12 +32,10 @@ const WrapperPersonnage = styled.div`
     transition-timing-function: ease-in-out;
     &:hover { 
         cursor:pointer; 
-        transform :  translate3d(0 ,-1rem , 0) ;
+        transform :  translate3d(0 ,-.8rem , 0) ;
         transition-duration:.2s;
         transition-property: transform;
-        transition-timing-function: ease-in-out;
-         //  border:1px dashed ${colors.grey};
-         
+        transition-timing-function: ease-in-out; 
     }
    
 `
@@ -42,6 +43,10 @@ const WrapperPersonnage = styled.div`
 const Image = styled(GatsbyImage)`
     width:150px;
     height:150px;
+    ${mq.mobile`
+      width:100%;
+      height:auto;
+    `}
 `
 
 

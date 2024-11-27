@@ -71,7 +71,10 @@ const Liste = styled.div`
   //justify-content: center;
   width:100%; 
   gap:.8rem;
-  margin:0 3.2rem;
+  margin:3.2rem 0;
+   ${mq.mobile`
+     flex-basis:45%;
+    `}
 `
 
 

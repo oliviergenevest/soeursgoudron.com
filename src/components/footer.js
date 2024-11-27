@@ -25,8 +25,9 @@ export const WrapperFooter = styled.div`
 
 const FooterLeft = styled.div`
 display:flex;
-
-gap:0.8rem;
+flex-wrap:wrap;
+justify-content:center;
+//gap:0.8rem;
    text-align: left;
    a {
    flex-shrink:0;

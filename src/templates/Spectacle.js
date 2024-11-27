@@ -169,6 +169,11 @@ const TitleSpectacleWrapper  = styled.div`
   padding: 1.6rem 3.2rem 1.6rem 0.8rem;
   bottom: 1.6rem;
   border-radius:0.8rem;
+   ${mq.tabletSmall` 
+    position:relative;
+    border-radius:0;
+    left:0;
+  `}
 `
 
 const TitleSpectacle  = styled.h1`

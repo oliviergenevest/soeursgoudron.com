@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../consts/style'; 
+import { colors, mq } from '../consts/style'; 
 import { GatsbyImage } from 'gatsby-plugin-image'
 
 const ItemWrapper = styled.div`
@@ -13,18 +13,31 @@ const ItemWrapper = styled.div`
     align-items:center;
     margin-top:3.2rem;
     background-color:white;
-    
+    border-radius: 3.2rem;
+    ${mq.mobile`
+      flex-direction:column;
+      gap:0.8rem;
+    `}
   `
 
 
 const Texte =   styled.div`
  flex-basis: 100%;
+ ${mq.mobile`
+      text-align: center;
+    `}
+ 
 `
 
 const Image =   styled.div`
   flex-basis: 250px;
-  border-radius:50%;
-  background-color:#f8f8f8;
+ border-radius: 3.2rem;
+
+  background-color:#fff;
+  ${mq.mobile`
+       flex-basis: 200px;
+    `}
+    .gatsby-image-wrapper{border-radius: 3.2rem;}
 `
 
 
