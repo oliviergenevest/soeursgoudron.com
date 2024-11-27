@@ -13,8 +13,8 @@ const WrapperPersonnage = styled.div`
  border-radius:.8rem;
     background:white;
     display:inline-flex;
-    flex-direction:column;,
-   // align-items:center;
+    flex-direction:column;
+  
     padding:.8rem;
     margin-bottom: .8rem;
  ${mq.mobile`
@@ -22,7 +22,7 @@ const WrapperPersonnage = styled.div`
     `}
     
     span {
-        max-width:150px;
+        max-width:100%;
         text-align:center;
     }
 

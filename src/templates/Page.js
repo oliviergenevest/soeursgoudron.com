@@ -72,8 +72,12 @@ const Liste = styled.div`
   width:100%; 
   gap:.8rem;
   margin:3.2rem 0;
+   & .gatsby-image-wrapper {
+     border-radius:.8rem;
+     }
    ${mq.mobile`
      flex-basis:45%;
+    
     `}
 `
 
