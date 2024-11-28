@@ -37,7 +37,7 @@ const Layout = ({ children, pageContext, location }) => {
       <SiteWrapper id="top">
         <Reboot />
         <Global />
-        {!(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') && 
+        {!(/*location.pathname === '/' ||*/ location.pathname ==='/en' || location.pathname ==='/en/') && 
         <Headroom  id={(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') ? "splash-headroom" : undefined}>  
           <Header location={location}   />
         </Headroom>

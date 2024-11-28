@@ -13,7 +13,7 @@ const ItemWrapper = styled.div`
     align-items:center;
     margin-top:3.2rem;
     background-color:white;
-    border-radius: 3.2rem;
+    border-radius: 1.6rem;
     ${mq.mobile`
       flex-direction:column;
       gap:0.8rem;

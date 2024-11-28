@@ -7,7 +7,7 @@ import {Reveal} from "react-awesome-reveal"
 import { fadeInUp, fadeInDown } from "../../style/animations"
 import _map from 'lodash/map'
 import styled from 'styled-components'
-
+import { colors, mq } from '../../consts/style'; 
 import {
   
   Grid3Col,
@@ -24,6 +24,10 @@ const FlexListeSpectacle = styled(Grid3Col)`
     & :first-child {
         grid-column: 1 / -1;
     }
+
+      ${mq.mobile`
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    `}
 `;
 
 

@@ -105,7 +105,7 @@ const Personnage = ({ data }) => {
            
         </WrapperPersonnage>
          <ModalWindow isActive={modalOpen}     handleClose={() => setModalState(false)} >
-         {data.nom} <br/>
+         {/* {data.nom} <br/>*/}
          <Image image={data.image.gatsbyImageData} alt={data.nom} />
          { (data.contenu.blocks.length > 0 || data.contenu.value ) && 
             <StructuredText

@@ -218,7 +218,7 @@ const AgendaListWrapper =   styled.div`
 const ListePersonnages =   styled.div`
   display:flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /*justify-content: center;*/
   width:100%; 
   gap:.8rem;
   margin-top:1.6rem;
