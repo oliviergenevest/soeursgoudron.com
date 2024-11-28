@@ -69,6 +69,7 @@ const Home = ({ data, pageContext, location }) => {
         {!(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') && 
           <Reveal keyframes={fadeInUp} ><h1>{titre}</h1></Reveal>
         }
+        <h1>HOMEPAGE TEMPLATE</h1>
         <Reveal keyframes={fadeInDown} >
               {(contenu.blocks.length > 0 || contenu.value) && <StructuredText
                   data={contenu}
