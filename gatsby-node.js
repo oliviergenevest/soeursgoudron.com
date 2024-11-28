@@ -131,7 +131,7 @@ exports.createPages = async ({ graphql, actions }) => {
          
           const { slug } = item.node;
           const pageSlug = (slug === "index") ?  "/" : slug;
-          const template = './src/templates/Page.js';
+          const template = (slug === "index") ? './src/templates/Home.js' : './src/templates/Page.js';
           createPage({
             path: `${pageSlug}`,
             component: require.resolve(template),
