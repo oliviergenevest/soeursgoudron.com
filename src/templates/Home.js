@@ -43,14 +43,32 @@ align-items: start;
 
 
 
-const TitleSpectacle  = styled.h1`
-  color:${colors.dark};
-  font-size:3.2rem;
- // font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  line-height: 38px;
-  margin-bottom: 0;
+const HomeSplash  = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex-basis:auto;
+  gap:3.2rem;
+  position:relative;
+  margin:0;
+  height:100vh;
+  width:100%;
+  min-width:100%;
+  text-align:center;
+  background:white;
+  .logo {
+    mix-blend-mode: multiply;
+    margin-top:10vh;
+  }
+  .bg_image {
+   
+    position:absolute!important;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+  }
 `
 
 
@@ -63,19 +81,23 @@ const Home = ({ data, pageContext, location }) => {
   return (
     <Fragment>
       <Seo meta={seoMetaTags} />
+      <HomeSplash>
+      <GatsbyImage objectPosition="0 0" image={data.backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
+
+        <GatsbyImage image={data.logo.gatsbyImageData} className="logo" alt="Logo Compagnie Les Soeurs Goudron"/>
+        <h1>MENU</h1>
+      </HomeSplash>
+     
       <PageWrapper>
 
         <PageInner>
-        {!(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') && 
-          <Reveal keyframes={fadeInUp} ><h1>{titre}</h1></Reveal>
-        }
-        <h1>HOMEPAGE TEMPLATE</h1>
+       
+        
         <Reveal keyframes={fadeInDown} >
               {(contenu.blocks.length > 0 || contenu.value) && <StructuredText
                   data={contenu}
                   renderBlock={({record}) => {
-                  
-                   
+
                     if (record.__typename === "DatoCmsAgendaGlobal") {
                       return <Agenda settings={record} />
                     }
@@ -113,7 +135,27 @@ const Home = ({ data, pageContext, location }) => {
 
 export const projectQuery = graphql` 
   query($slug: String!) {
-    
+    logo: datoCmsAsset(basename: {eq: "logo-sg"}) {
+        gatsbyImageData (
+        width:400,
+            imgixParams: {    
+              auto: "compress",
+              
+            }
+          )
+        id
+      }
+
+    backgroundImage: datoCmsAsset(basename: {eq: "bingo-guirlande-confetti-2-1"}) {
+        gatsbyImageData (
+            imgixParams: {    
+              auto: "compress",
+              
+            }
+          )
+        id
+      }
+
     page: datoCmsPage(slug: { eq: $slug }) {
       titre
       slug

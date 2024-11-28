@@ -60,7 +60,7 @@ export const SectionWrapper = styled.div`
 
 export const PageTitle = styled.h1`
   ${font.pageTitle}
-  padding-bottom:1rem;
+  
 `;
 
 export const Title = styled.h1`

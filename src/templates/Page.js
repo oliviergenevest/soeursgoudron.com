@@ -3,7 +3,7 @@ import {  graphql } from 'gatsby';
 import styled from 'styled-components';
 import _map from 'lodash/map';
 
-import {  PageWrapper, PageInner,Spacer,Flex, ArrowLeftLink, ArrowRightLink, ArrowLeftIcon, ArrowRightIcon,Text } from '../components/Elements';
+import {  PageWrapper, PageInner,Spacer,Flex, PageTitle, ArrowLeftLink, ArrowRightLink, ArrowLeftIcon, ArrowRightIcon,Text } from '../components/Elements';
 import { colors, mq } from '../consts/style';
 import Seo from '../components/Seo';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -94,7 +94,7 @@ const Page = ({ data, pageContext, location }) => {
 
         <PageInner>
         {!(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') && 
-          <Reveal keyframes={fadeInUp} ><h1>{titre}</h1></Reveal>
+          <Reveal keyframes={fadeInUp} ><PageTitle>{titre}</PageTitle></Reveal>
         }
         <Reveal keyframes={fadeInDown} >
               {(contenu.blocks.length > 0 || contenu.value) && <StructuredText
