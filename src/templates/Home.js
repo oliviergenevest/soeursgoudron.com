@@ -8,7 +8,7 @@ import { colors, mq } from '../consts/style';
 import Seo from '../components/Seo';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import {StructuredText} from "react-datocms";
-
+import Headroom from 'react-headroom';
 
 import Agenda from '../components/agenda/agenda';
 
@@ -18,6 +18,7 @@ import {Reveal} from "react-awesome-reveal"
 import { fadeInDown, fadeInUp } from "../style/animations"
 
 import ListeSpectacles from '../components/spectacles/listeSpectacles';
+import Header from '../components/header';
 
 
 
@@ -47,7 +48,7 @@ const HomeSplash  = styled.div`
   display:flex;
   flex-direction:column;
   align-items:center;
-  flex-basis:auto;
+justify-content:center;
   gap:3.2rem;
   position:relative;
   margin:0;
@@ -58,17 +59,9 @@ const HomeSplash  = styled.div`
   background:white;
   .logo {
     mix-blend-mode: multiply;
-    margin-top:10vh;
+ 
   }
-  .bg_image {
-   
-    position:absolute!important;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    right:0;
-  }
+  
 `
 
 
@@ -82,12 +75,14 @@ const Home = ({ data, pageContext, location }) => {
     <Fragment>
       <Seo meta={seoMetaTags} />
       <HomeSplash>
-      <GatsbyImage objectPosition="0 0" image={data.backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
 
         <GatsbyImage image={data.logo.gatsbyImageData} className="logo" alt="Logo Compagnie Les Soeurs Goudron"/>
-        <h1>MENU</h1>
-      </HomeSplash>
+       
      
+      </HomeSplash>
+      <Headroom  id={(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') ? "splash-headroom" : undefined}>  
+          <Header location={location}   />
+        </Headroom>
       <PageWrapper>
 
         <PageInner>
@@ -146,15 +141,7 @@ export const projectQuery = graphql`
         id
       }
 
-    backgroundImage: datoCmsAsset(basename: {eq: "bingo-guirlande-confetti-2-1"}) {
-        gatsbyImageData (
-            imgixParams: {    
-              auto: "compress",
-              
-            }
-          )
-        id
-      }
+   
 
     page: datoCmsPage(slug: { eq: $slug }) {
       titre

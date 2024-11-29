@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import { font } from '../consts/style';
 const Global = createGlobalStyle`
 
 html { font-family: 'Albert Sans Variable', sans-serif; }
@@ -25,6 +25,10 @@ a {
 		text-decoration:none;
 		color:inherit;
 	}
+}
+
+h1 {
+  ${font.title}
 }
 
 strong {

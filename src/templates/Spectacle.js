@@ -178,12 +178,13 @@ const TitleSpectacleWrapper  = styled.div`
 
 const TitleSpectacle  = styled.h1`
   color:${colors.dark};
-  font-size:3.2rem;
+
   //font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   line-height: 38px;
   margin-bottom: 0;
+  padding-bottom:.8rem;
 `
 
 
@@ -226,10 +227,39 @@ const ListePersonnages =   styled.div`
   `}
 `
 
+const SpectacleSplash  = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  margin:0;
+  height:calc(100vh - 130px);
+  width:100%;
+  min-width:100%;
+  text-align:center;
+  background:white;
+
+  .bg_image {
+    position:absolute!important;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
+  }
+`
+const TitleSplash  = styled.div`
+  background:#ffffffe6;
+  padding:3.2rem;
+  z-index:1;
+  border-radius:0.8rem;
+`
+
 
 const Spectacle = ({ data, pageContext, location }) => {
 
-  const {  nom, teaser, content, diaporama, encart,seoMetaTags, backgroundImage} = data.spectacle;
+  const {  nom, teaser, content, slogan, diaporama, encart,seoMetaTags, backgroundImage} = data.spectacle;
 /*
   const prevRef = useRef(null);
   const nextRef = useRef(null);*/
@@ -237,8 +267,18 @@ const Spectacle = ({ data, pageContext, location }) => {
   return (
     <Fragment>
       <Seo meta={seoMetaTags} />
+      <SpectacleSplash>
+      <GatsbyImage objectPosition="0 0" image={backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
+      <TitleSplash>
+                      
+            <Reveal keyframes={fadeInUp} ><TitleSpectacle>{nom}</TitleSpectacle></Reveal>
+            <Reveal keyframes={fadeInDown} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
+          
+      </TitleSplash>
+      
+      </SpectacleSplash>
       <PageWrapper>
-
+        
         <DiaporamaFullWidth>
           <Swiper
             modules={[Navigation, FreeMode, Keyboard, Autoplay]}
@@ -294,8 +334,8 @@ const Spectacle = ({ data, pageContext, location }) => {
                   </Boop> 
                 </Link>
                 <div>              
-                  <Reveal keyframes={fadeInUp} ><TitleSpectacle>{nom}</TitleSpectacle></Reveal>
-                  <Reveal keyframes={fadeInDown} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} /></Reveal>
+                  <Reveal keyframes={fadeInUp} triggerOnce ><TitleSpectacle>{nom}</TitleSpectacle></Reveal>
+                  <Reveal keyframes={fadeInDown} triggerOnce><TeaserSpectacle dangerouslySetInnerHTML={{ __html:teaser }} /></Reveal>
                 </div> 
             </TitleSpectacleWrapper>
             {/* <DecoSpectacle> <GatsbyImage image={backgroundImage.gatsbyImageData} alt=""/></DecoSpectacle> */}
@@ -464,7 +504,7 @@ export const projectQuery = graphql`
         gatsbyImageData(
           placeholder: BLURRED,
           forceBlurhash: false,   
-      
+
         )
       } 
       seoMetaTags {
