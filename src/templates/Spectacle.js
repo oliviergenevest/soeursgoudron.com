@@ -243,14 +243,14 @@ const SpectacleSplash  = styled.div`
   .bg_image {
     position:absolute!important;
     width:100%;
-    height:100%;
+   // height:100%;
     top:0;
     left:0;
     right:0;
   }
 `
 const TitleSplash  = styled.div`
-  background:#ffffffe6;
+  background:#ffffff;
   padding:3.2rem;
   z-index:1;
   border-radius:0.8rem;

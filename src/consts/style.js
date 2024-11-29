@@ -63,7 +63,8 @@ export const font = {
             font-size:3.6rem;
             line-height:normal;
             font-weight:700;
-            line-height:3.2rem;
+      
+            
             color: ${colors.dark};
             @media screen and (max-width: ${mQueryPoint.tablet}) {
               font-size: 2.4 rem;
@@ -73,12 +74,12 @@ export const font = {
 `,
 // gros titre centré
   title:  ` 
-            font-size:4.4rem;
-             padding-bottom:3.6rem;
+            font-size:3.4rem;
+             padding-bottom:3.2rem;
             line-height:normal;
             font-weight:700;
             @media screen and (max-width: ${mQueryPoint.tablet}) {
-              font-size: 3.6rem;
+              font-size: 2.4rem;
             }
           `,
   h2: `

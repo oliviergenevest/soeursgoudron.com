@@ -52,7 +52,7 @@ justify-content:center;
   gap:3.2rem;
   position:relative;
   margin:0;
-  height:100vh;
+  height:calc(80vh - 130px);
   width:100%;
   min-width:100%;
   text-align:center;
@@ -80,9 +80,7 @@ const Home = ({ data, pageContext, location }) => {
        
      
       </HomeSplash>
-      <Headroom  id={(location.pathname === '/' || location.pathname ==='/en' || location.pathname ==='/en/') ? "splash-headroom" : undefined}>  
-          <Header location={location}   />
-        </Headroom>
+   
       <PageWrapper>
 
         <PageInner>

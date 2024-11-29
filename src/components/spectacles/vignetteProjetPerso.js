@@ -38,7 +38,7 @@ const ItemWrapperOld = styled(Link)`
 const ItemWrapper = styled(Link)`
   display:block;
   position: relative;
-  margin-bottom:4rem;
+  //margin-bottom:4rem;
   background-color:${props => (props.backgroundColor  ? props.backgroundColor : 'inherit' )};
   border-radius:0.8rem;
   height:512px;

@@ -20,10 +20,10 @@ const FlexListeSpectacle = styled(Grid3Col)`
     margin-bottom:3.2rem;
     display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    & :first-child {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    /*& :first-child {
         grid-column: 1 / -1;
-    }
+    }*/
 
       ${mq.mobile`
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
