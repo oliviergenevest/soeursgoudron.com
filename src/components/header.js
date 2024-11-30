@@ -332,6 +332,7 @@ export default function Header({ location }) {
             nodes {
                 id
                 root
+                position
                 menuItem {  
                  ... on DatoCmsPage {
                     id
@@ -344,6 +345,7 @@ export default function Header({ location }) {
                 } 
                 
                 treeChildren {
+                  position
                   menuItem {
                     ... on DatoCmsSpectacle {
                       id
@@ -391,8 +393,9 @@ export default function Header({ location }) {
                   
 
                   <SubMenu className="sub_menu">
-                    {item.treeChildren.map( subItem => { return(
+                    {item.treeChildren.sort((a, b) => a.position - b.position).map( subItem => { return(
                     <li  key={subItem.menuItem.id}>
+                   
                     <SubLinkHeader to={`/${slug}/${subItem.menuItem.slug}`} activeClassName="active">{subItem.menuItem.titre}</SubLinkHeader>
                     
                     </li>)})}

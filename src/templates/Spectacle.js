@@ -10,6 +10,7 @@ import { Icon } from '@iconify/react';
 import Seo from '../components/Seo';
 import Boop from '../components/boop';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import {StructuredText} from "react-datocms";
 import Video from '../components/video';
 import Album from '../components/album';
@@ -187,6 +188,17 @@ const TitleSpectacle  = styled.h1`
   padding-bottom:.8rem;
 `
 
+const TitleSpectacleTop  = styled.div`
+  color:${colors.dark};
+
+  font-size:4.2rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 38px;
+  margin-bottom: 0;
+  padding-bottom:.8rem;
+`
+
 
 
 
@@ -213,7 +225,7 @@ const AgendaListWrapper =   styled.div`
   flex-direction:column;
   width:100%; 
   /*gap:5rem;*/
-  margin-top:1rem;
+  //margin-top:1rem;
 `
 
 const ListePersonnages =   styled.div`
@@ -271,13 +283,20 @@ const Spectacle = ({ data, pageContext, location }) => {
       <GatsbyImage objectPosition="0 0" image={backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
       <TitleSplash>
                       
-            <Reveal keyframes={fadeInUp} ><TitleSpectacle>{nom}</TitleSpectacle></Reveal>
-            <Reveal keyframes={fadeInDown} ><TeaserSpectacle dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
-          
+            <Reveal keyframes={fadeInUp} ><TitleSpectacleTop>{nom}</TitleSpectacleTop></Reveal>
+            <Reveal keyframes={fadeInDown} ><div dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
+          {/* */}  <AnchorLink to="/#content" title={nom}>
+              <div className="arrow">
+                <div className="arrow-top"></div>
+                <div className="arrow-bottom"></div>
+              </div>
+            </AnchorLink>
+             
       </TitleSplash>
       
       </SpectacleSplash>
-      <PageWrapper>
+      
+      <PageWrapper id="content">
         
         <DiaporamaFullWidth>
           <Swiper
@@ -343,7 +362,7 @@ const Spectacle = ({ data, pageContext, location }) => {
           
         <PageInner>
         
-          <div>Home / Spectacles / {nom}</div>
+         
   
           {/*<HeaderSpectacle>
             

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { font } from '../consts/style';
+import { font, colors } from '../consts/style';
 const Global = createGlobalStyle`
 
 html { font-family: 'Albert Sans Variable', sans-serif; }
@@ -29,6 +29,10 @@ a {
 
 h1 {
   ${font.title}
+}
+
+h2 {
+  ${font.h2}
 }
 
 strong {
@@ -88,6 +92,72 @@ strong {
    
   }
 
+
+/* arrow */
+/* From Uiverse.io by Nawsome */ 
+.arrow {
+  cursor: pointer;
+  height: 60px;
+  transform: rotate(90deg);
+  transition: transform 0.1s;
+  width: 30px;
+  margin:0 auto;
+}
+
+.arrow-top, .arrow-bottom {
+  background-color: #ddd;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-top:after, .arrow-bottom:after {
+  background-color: #8b8b8b;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow:active {
+  transform:  scale(0.9);
+  transform: rotate(90deg);
+}
 `;
 
 

@@ -86,9 +86,9 @@ export const font = {
           
           font-style: normal;
           font-weight: 500;
-          font-size: 2.4rem;
+          font-size: 2.6rem;
           line-height: 145%;
-          color: ${colors.dark};
+          /*color: ${colors.dark};*/
           `,
 
   h3 :`

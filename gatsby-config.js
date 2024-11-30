@@ -69,7 +69,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+    resolve:  `gatsby-plugin-anchor-links`,
     
+    },
     {
       resolve: 'gatsby-plugin-styled-components',
     },
