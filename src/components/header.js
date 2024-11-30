@@ -4,7 +4,9 @@ import { FormattedMessage} from 'react-intl';
 import Link from './ExtendedLink';
 import { colors, font,  boxShadow, mq } from '../consts/style';
 import { headerTypes } from '../types/propTypes';
-import { Menu4 as MenuAltRight } from '@styled-icons/remix-fill';
+import { Menu4 as MenuAltRight2 } from '@styled-icons/remix-fill';
+import { Menu as MenuAltRight } from '@styled-icons/feather/Menu';
+
 import { XCircle } from '@styled-icons/bootstrap';
 import { useSpring, animated } from '@react-spring/web'
 import { graphql, useStaticQuery } from "gatsby"

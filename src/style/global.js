@@ -105,7 +105,7 @@ strong {
 }
 
 .arrow-top, .arrow-bottom {
-  background-color: #ddd;
+  background-color: #585656;
   height: 4px;
   left: -5px;
   position: absolute;

@@ -28,7 +28,6 @@ import 'swiper/scss/pagination';
 import 'swiper/scss/autoplay';
 import Personnage from '../components/personnage';
 
-
 const PageInnerProject = styled.div`
 
   width: 100%;
@@ -245,6 +244,7 @@ const SpectacleSplash  = styled.div`
   align-items:center;
   justify-content:center;
   position:relative;
+  z-index:0;
   margin:0;
   height:calc(100vh - 130px);
   width:100%;
@@ -278,22 +278,23 @@ const Spectacle = ({ data, pageContext, location }) => {
   //console.log(content.value)
   return (
     <Fragment>
+
       <Seo meta={seoMetaTags} />
       <SpectacleSplash>
-      <GatsbyImage objectPosition="0 0" image={backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
-      <TitleSplash>
-                      
+        <GatsbyImage objectPosition="0 0" image={backgroundImage.gatsbyImageData} alt="" className="bg_image"/>
+        <TitleSplash>     
+        
+
+
             <Reveal keyframes={fadeInUp} ><TitleSpectacleTop>{nom}</TitleSpectacleTop></Reveal>
             <Reveal keyframes={fadeInDown} ><div dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
-          {/* */}  <AnchorLink to="/#content" title={nom}>
+          {/* */}  <AnchorLink to="#content" title={nom}>
               <div className="arrow">
                 <div className="arrow-top"></div>
                 <div className="arrow-bottom"></div>
               </div>
-            </AnchorLink>
-             
-      </TitleSplash>
-      
+            </AnchorLink>       
+        </TitleSplash>    
       </SpectacleSplash>
       
       <PageWrapper id="content">
