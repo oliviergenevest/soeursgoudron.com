@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef } from 'react';
 import {  graphql } from 'gatsby';
 import Link from '../components/ExtendedLink';
 import styled from 'styled-components';
@@ -10,7 +10,6 @@ import { Icon } from '@iconify/react';
 import Seo from '../components/Seo';
 import Boop from '../components/boop';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import {StructuredText} from "react-datocms";
 import Video from '../components/video';
 import Album from '../components/album';
@@ -276,6 +275,14 @@ const Spectacle = ({ data, pageContext, location }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);*/
   //console.log(content.value)
+  
+
+/* scroll */
+const ref = useRef(null);
+const handleClick = () => {
+ref.current?.scrollIntoView({behavior: 'smooth'});
+};
+
   return (
     <Fragment>
 
@@ -288,16 +295,16 @@ const Spectacle = ({ data, pageContext, location }) => {
 
             <Reveal keyframes={fadeInUp} ><TitleSpectacleTop>{nom}</TitleSpectacleTop></Reveal>
             <Reveal keyframes={fadeInDown} ><div dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
-          {/* */}  <AnchorLink to="#content" title={nom}>
-              <div className="arrow">
+     
+              <div className="arrow" onClick={handleClick}>
                 <div className="arrow-top"></div>
                 <div className="arrow-bottom"></div>
               </div>
-            </AnchorLink>       
+               
         </TitleSplash>    
       </SpectacleSplash>
       
-      <PageWrapper id="content">
+      <PageWrapper id="content" ref={ref}>
         
         <DiaporamaFullWidth>
           <Swiper
