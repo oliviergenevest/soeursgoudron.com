@@ -114,7 +114,7 @@ strong {
 }
 
 .arrow-top:after, .arrow-bottom:after {
-  background-color: #8b8b8b;
+  background-color: #000;
   content: "";
   height: 100%;
   position: absolute;
