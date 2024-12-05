@@ -18,9 +18,8 @@ import Boop from '../boop';
     text-align: center;
     &:hover {
       text-decoration: none;
-      //background:  ${colors.yellow};
       color: ${colors.dark}!important;
-    border: 1px solid ${colors.dark};
+      border: 1px solid ${colors.dark};
     }
   
 `;
