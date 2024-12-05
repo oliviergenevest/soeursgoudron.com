@@ -69,10 +69,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-    resolve:  `gatsby-plugin-anchor-links`,
-    
-    },
+
     {
       resolve: 'gatsby-plugin-styled-components',
     },
@@ -96,8 +93,6 @@ module.exports = {
         icon: `src/images/logo-sg.jpg`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-   //  `gatsby-plugin-offline`,
+   
   ],
 }

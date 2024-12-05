@@ -68,10 +68,11 @@ const Footer= ({ location }) => {
 
   const data = useStaticQuery(graphql`
     query footer {
-        datoCmsAsset(basename: {eq: "logo-curieuse-24-noir-1-1"}) {
+        datoCmsAsset(basename: {eq: "logo-la-curieuse-small"}) {
           gatsbyImageData (
+          
               imgixParams: {    
-                auto: "compress",
+                auto: "format",
                 w: "50"
               }
             )
@@ -105,12 +106,12 @@ const Footer= ({ location }) => {
     <WrapperFooter>   
       
     <FooterLeft>
-      <a href="https://www.la-curieuse.com" target="_blank" rel="noopener noreferrer" key={data.datoCmsAsset.id}>
+      <a href="https://www.la-curieuse.com" target="_blank" rel="noopener noreferrer" title="La Curieuse" key={data.datoCmsAsset.id}>
         <GatsbyImage image = {data.datoCmsAsset.gatsbyImageData} alt="La Curieuse" />
       </a>
     
       {data.datoCmsFooter.socials.map((socialIcon, id) => 
-        <a href={socialIcon.lien} target="_blank" rel="noopener noreferrer" key={id}>
+        <a href={socialIcon.lien} target="_blank" rel="noopener noreferrer" key={id} title={JSON.parse(socialIcon.icone).iconName}>
           <FontAwesomeIcon icon={JSON.parse(socialIcon.icone)} />
         </a>
       )}

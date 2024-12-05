@@ -14,11 +14,8 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@cascadia-code/scroll-to-hash-element": "^2.0.3",
     "@emotion/react": "^11.11.4",
     "@fontsource-variable/albert-sans": "^5.1.0",
-    "@fontsource/dm-sans": "^5.0.3",
-    "@fontsource/raleway": "^5.0.19",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@iconify/icons-brandico": "^1.2.2",
     "@iconify/react": "^4.1.0",
@@ -32,7 +29,6 @@
     "babel-plugin-styled-components": "2.1.4",
     "gatsby": "^5.13.3",
     "gatsby-cli": "5.13.3",
-    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-canonical-urls": "^5.13.1",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-image": "^3.13.1",

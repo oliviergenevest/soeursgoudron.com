@@ -16,6 +16,8 @@ import Album from '../components/album';
 import {Reveal} from "react-awesome-reveal"
 import { fadeInDown, fadeInUp } from "../style/animations"
 import  AgendaItemLight  from '../components/agenda/agendaItemLight';
+import  AgendaItem  from '../components/agenda/agendaItem';
+
 import  ReadMore  from '../components/readMore/readMore';
 // import Swiper core and required modules
 import { Navigation, Autoplay, FreeMode, Keyboard } from 'swiper/modules';
@@ -246,8 +248,12 @@ const SpectacleSplash  = styled.div`
   z-index:0;
   margin:0;
   height:calc(100vh - 130px);
+  ${mq.mobile` 
+    height:400px;
+  `}
   width:100%;
   min-width:100%;
+  min-height:384px;
   text-align:center;
   background:white;
 
@@ -296,7 +302,8 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
             <Reveal keyframes={fadeInUp} ><TitleSpectacleTop>{nom}</TitleSpectacleTop></Reveal>
             <Reveal keyframes={fadeInDown} ><div dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
      
-              <div className="arrow" onClick={handleClick}>
+              <div className="arrow" onClick={handleClick}  role="button" 
+     tabIndex={0}  aria-label="Découvrir le spectacle">
                 <div className="arrow-top"></div>
                 <div className="arrow-bottom"></div>
               </div>
@@ -447,7 +454,7 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
                       <AgendaListWrapper>
                       
                     { data.dates.nodes.map((item, i) => {
-                        return (  <AgendaItemLight key={i} item={item} /> )
+                        return (  <AgendaItem key={i} item={item} /> )
                     })
                     }
                     

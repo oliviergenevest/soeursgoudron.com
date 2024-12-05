@@ -55,11 +55,11 @@ justify-content:center;
   height:calc(80vh - 130px);
   width:100%;
   min-width:100%;
+  min-height:384px;
   text-align:center;
   background:white;
   .logo {
     mix-blend-mode: multiply;
- 
   }
   
 `

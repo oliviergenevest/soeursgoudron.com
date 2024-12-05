@@ -154,12 +154,10 @@ const LinkHeader = styled(props => <Link {...props} />)`
   }*/
 
     
-  &:not(.with_submenu):hover {
+  &:not(.with_submenu):hover { 
     background: url(https://www.datocms-assets.com/144438/1730974893-group-2.png) bottom left no-repeat;
-
     background-size: 100% 5px;
     padding-bottom: 6px;
-    
   }
 
 
@@ -252,7 +250,7 @@ const CloseMenuMobile = styled.button`
   right:2rem;
   display:block;
   border:none;
- & svg { fill:white;background:transparent!important;}
+ & svg { fill:${colors.dark};background:transparent!important;}
   background:transparent;
   &:focus {
     outline:none;
@@ -262,7 +260,6 @@ const CloseMenuMobile = styled.button`
 /*MENU MOBILE*/
 const StyledMenuAltRight = styled(MenuAltRight)`
   color:${colors.dark};
-
 
 `
 const StyledXCircle = styled(XCircle)`
@@ -295,36 +292,18 @@ const ContentMobile = styled(animated.div)`
   }
 `
 
-const ItemMobileNav = styled(animated.div)`
- 
+const ItemMobileNav = styled(animated.div)` 
   padding:1.5rem;
   margin-bottom:.5rem;
  a {
   font-size:4rem;
-   color:${colors.light};
-   &:hover, &.active {
-     color:${colors.orange};
+  font-weight:300;
+  color:${colors.dark};
+  &:hover, &.active {
+     color:${colors.dark};
     }
-  }
-  
+  } 
 `
-
-/*
-const FlexBtnWrapper = styled(Flex)`
-  margin-top:2rem;  
-  margin-bottom:3rem;
-  align-items:flex-start;
-  justify-content:center;
-  & > * {
-    margin:0 ${space.quarter};
-  }
-  ${mq.mobile`
-      margin-top:1rem;
-  margin-bottom:1rem;
-      `}
-`
-*/
-
 
 export default function Header({ location }) {
  
@@ -368,7 +347,7 @@ export default function Header({ location }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false) // mobile menu closed by default
   const MenuAnimation = useSpring({
   native: true,
-  to: { opacity: mobileNavOpen ? 1 : 0, transform: mobileNavOpen ? 'translate3d(0,0,0)' : 'translate3d(0,-100%, 0)', backgroundColor: mobileNavOpen ? '#1c323c' : '#fff'},
+  to: { opacity: mobileNavOpen ? 1 : 0, transform: mobileNavOpen ? 'translate3d(0,0,0)' : 'translate3d(0,-100%, 0)', background: mobileNavOpen ? '#e9e9f1' : '#fff'},
   })
 
   return (

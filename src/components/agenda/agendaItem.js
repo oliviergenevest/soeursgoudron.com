@@ -82,7 +82,7 @@ const AgendaItem = ({item, path = '', theme = 'dark', displayName = false}) => {
             <div style={{'lineHeight':'2rem','flexGrow':'1'}}> 
               <AgendaItemMois theme={theme}>
                 {format(new Date(item.dateDebutEvenement), 'dd LLL yyyy', {locale: fr})}
-              </AgendaItemMois> |   
+              </AgendaItemMois>&nbsp;|&nbsp;  
               {displayName && 
                 <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2rem'}}>
                   <Link to ={path + item.spectacle.slug}>{item.spectacle.nom}</Link>  &gt;  
