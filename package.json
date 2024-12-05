@@ -25,7 +25,6 @@
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/feather": "^10.47.0",
     "@styled-icons/ionicons-solid": "^10.34.0",
-    "@styled-icons/remix-fill": "^10.18.0",
     "babel-plugin-styled-components": "2.1.4",
     "gatsby": "^5.13.3",
     "gatsby-cli": "5.13.3",
