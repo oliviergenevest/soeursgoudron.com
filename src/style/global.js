@@ -75,24 +75,34 @@ strong {
   }
 
 /* VIDEO RESPONSIVE */
- .video-responsive { 
-  overflow:hidden; 
-  padding-bottom:56.25%; 
-  position:relative; 
-  height:0;
-   margin: 3.2rem 0;
+ .player-wrapper{ 
+  position: relative;
+  width:100%;
+  height:auto;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+  overflow:hidden;
   }
-  
-  .video-responsive div {
-    left:0; 
-    top:0; 
-    height:100%;
-   // width:100%!important;
-    //position:absolute;
 
 
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
 }
-  
+
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 
 
 /* arrow */

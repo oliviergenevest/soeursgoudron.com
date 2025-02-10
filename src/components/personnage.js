@@ -43,9 +43,12 @@ const StyledContent = styled.div `
     flex-direction:row;
     gap:3.2rem;
     align-items:flex-start;
+    width:100%;
     ${mq.tabletSmall`
         flex-direction:column;
+          flex-wrap:wrap;
         gap:1.6rem;
+        display:flex;
     `}
 
 `
@@ -74,6 +77,7 @@ flex-shrink:0;
 `
 const Content  = styled.div`
     padding-top:3.2rem;
+    width:100%;
 `
 
 export const personnageFragment = graphql`

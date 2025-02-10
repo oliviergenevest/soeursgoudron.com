@@ -3,9 +3,14 @@ import ReactPlayer from 'react-player'
 
 
 const Video = ({ videoSrcURL, videoTitle, ...props }) => (
-  <><div className="video-responsive">
+  <><div className="player-wrapper">
    
-  <ReactPlayer url={videoSrcURL} controls/>
+  <ReactPlayer url={videoSrcURL}
+   controls 
+   className="react-player"
+height="100%"
+      width="100%"
+       />
   {/*  <iframe
       src={videoSrcURL}
       title={videoTitle}
