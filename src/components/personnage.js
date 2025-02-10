@@ -8,17 +8,15 @@ import { graphql } from "gatsby"
 import { StructuredText } from 'react-datocms'
 import Video from "./video.js";
 
-const WrapperPersonnage = styled.div`
-    
- border-radius:.8rem;
-    background:white;
+const WrapperPersonnage = styled.div`  
+    border-radius:.8rem;
+   // background:white;
     display:inline-flex;
-    flex-direction:column;
-  
+    flex-direction:column; 
     padding:.8rem;
     margin-bottom: .8rem;
- ${mq.mobile`
-    flex-basis:45%;
+    ${mq.mobile`
+        flex-basis:45%;
     `}
     
     span {
@@ -37,18 +35,46 @@ const WrapperPersonnage = styled.div`
         transition-property: transform;
         transition-timing-function: ease-in-out; 
     }
-   
 `
 
+const StyledContent = styled.div `
+    display:flex;
+    flex-wrap:nowrap;
+    flex-direction:row;
+    gap:3.2rem;
+    align-items:flex-start;
+    ${mq.tabletSmall`
+        flex-direction:column;
+        gap:1.6rem;
+    `}
+
+`
+
+
 const Image = styled(GatsbyImage)`
+
     width:150px;
     height:150px;
-    ${mq.mobile`
+    height:auto;
+    ${mq.mobile` 
       width:100%;
       height:auto;
     `}
 `
 
+const ModalImage = styled(GatsbyImage)`
+flex-shrink:0;
+    width:250px;
+    //height:150px;
+    align-items:flex-start; 
+    ${mq.tabletSmall` 
+      width:100%;
+      height:auto;
+    `}
+`
+const Content  = styled.div`
+    padding-top:3.2rem;
+`
 
 export const personnageFragment = graphql`
   fragment Personnage on DatoCmsPersonnage {
@@ -57,7 +83,7 @@ export const personnageFragment = graphql`
             gatsbyImageData(
                 placeholder: BLURRED,
                 forceBlurhash: false,   
-                width:500,
+                width:250,
             )
         } 
         contenu {
@@ -106,8 +132,10 @@ const Personnage = ({ data }) => {
         </WrapperPersonnage>
          <ModalWindow isActive={modalOpen}     handleClose={() => setModalState(false)} >
          {/* {data.nom} <br/>*/}
-         <Image image={data.image.gatsbyImageData} alt={data.nom} />
-         { (data.contenu.blocks.length > 0 || data.contenu.value ) && 
+         <StyledContent>
+         
+            <ModalImage image={data.image.gatsbyImageData} alt={data.nom} />
+            { (data.contenu.blocks.length > 0 || data.contenu.value ) && <Content>
             <StructuredText
                 data={data.contenu}
                 renderBlock={({record}) => {
@@ -129,7 +157,9 @@ const Personnage = ({ data }) => {
                     )
                 }}
             />
+            </Content>
         }
+        </StyledContent>
      </ModalWindow>
      </>
         )

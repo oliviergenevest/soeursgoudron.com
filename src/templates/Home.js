@@ -33,7 +33,7 @@ const PageInnerProject = styled.div`
   grid-template-areas: "main" "encart";
   grid-template-columns:  minmax(0, 2fr) minmax(350px, 1fr) ;
   grid-gap: 5rem;
-align-items: start;
+  align-items: start;
   ${mq.tablet` 
   grid-template-columns: 1fr;
   grid-template-columns:minmax(0, 1fr);
@@ -51,8 +51,8 @@ const HomeSplash  = styled.div`
 justify-content:center;
   gap:3.2rem;
   position:relative;
-  margin:0;
-  height:calc(80vh - 130px);
+  margin:0; 
+  height:calc(100vh - 130px);
   width:100%;
   min-width:100%;
   min-height:384px;
@@ -60,6 +60,15 @@ justify-content:center;
   background:white;
   .logo {
     mix-blend-mode: multiply;
+  }
+  
+  .bg_image {
+    position:absolute!important;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    right:0;
   }
   
 `
@@ -76,8 +85,9 @@ const Home = ({ data, pageContext, location }) => {
       <Seo meta={seoMetaTags} />
       <HomeSplash>
 
-        <GatsbyImage image={data.logo.gatsbyImageData} className="logo" alt="Logo Compagnie Les Soeurs Goudron"/>
-       
+        <GatsbyImage image={data.backgroundhome.gatsbyImageData} className="bg_image" alt="Logo Compagnie Les Soeurs Goudron"/>
+               <GatsbyImage image={data.logo.gatsbyImageData} className="logo" alt="Logo Compagnie Les Soeurs Goudron"/>
+
      
       </HomeSplash>
    
@@ -130,16 +140,23 @@ export const projectQuery = graphql`
   query($slug: String!) {
     logo: datoCmsAsset(basename: {eq: "logo-sg"}) {
         gatsbyImageData (
-        width:400,
+        width:200,
             imgixParams: {    
+            
               auto: "compress",
-              
             }
           )
         id
       }
 
-   
+     backgroundhome: datoCmsAsset(basename: {eq: "fond-sg-accueil-1"}) {
+        gatsbyImageData (
+            imgixParams: {    
+              auto: "compress",
+            }
+          )
+        id
+      }   
 
     page: datoCmsPage(slug: { eq: $slug }) {
       titre

@@ -75,7 +75,7 @@ strong {
   }
 
 /* VIDEO RESPONSIVE */
-.video-responsive { 
+ .video-responsive { 
   overflow:hidden; 
   padding-bottom:56.25%; 
   position:relative; 
@@ -83,14 +83,16 @@ strong {
    margin: 3.2rem 0;
   }
   
-  .video-responsive iframe {
+  .video-responsive div {
     left:0; 
     top:0; 
     height:100%;
-    width:100%;
-    position:absolute;
-   
-  }
+   // width:100%!important;
+    //position:absolute;
+
+
+}
+  
 
 
 /* arrow */
