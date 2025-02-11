@@ -13,10 +13,19 @@ export const useModalWithData = (
     const [modalOpen, setModalOpen] = useModal(initialMode)
     const [selected, setSelected] = useState(initialSelected)
     const setModalState = state => {
-      setModalOpen(state)
+     
       if (state === false) {
         /*setSelected(null)*/
+         // Enables Background Scrolling whilst the SideDrawer/Modal is open
+         if (typeof window != 'undefined' && window.document ) {
+          document.body.style.overflow = 'unset';
+        }
+         
       }
+       setModalOpen(state)
+    if (typeof window != 'undefined' && window.document && state === true ) {
+          document.body.style.overflow = 'hidden';
+        }
     }
     return { modalOpen, setModalOpen, selected, setSelected, setModalState }
   }
