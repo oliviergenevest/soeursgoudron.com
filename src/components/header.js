@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, {  useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FormattedMessage} from 'react-intl';
 import Link from './ExtendedLink';
@@ -348,6 +348,12 @@ export default function Header({ location }) {
   native: true,
   to: { opacity: mobileNavOpen ? 1 : 0, transform: mobileNavOpen ? 'translate3d(0,0,0)' : 'translate3d(0,-100%, 0)', background: mobileNavOpen ? '#e9e9f1' : '#fff'},
   })
+
+  useEffect(() => {
+    mobileNavOpen ? document.body.style.overflow = 'hidden': document.body.style.overflow = 'unset';
+    
+}, [mobileNavOpen]);
+   
 
   return (
     <> 
