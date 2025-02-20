@@ -77,6 +77,7 @@ strong {
 /* VIDEO RESPONSIVE */
  .player-wrapper{ 
   position: relative;
+  margin-bottom:2rem;
   width:100%;
   height:auto;
   padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
@@ -95,7 +96,7 @@ strong {
 .player-wrapper {
   position: relative;
   padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
-  margin-bottom:2rem;
+
 }
 
 .react-player {
