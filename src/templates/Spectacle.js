@@ -276,7 +276,7 @@ const TitleSplash  = styled.div`
 
 const Spectacle = ({ data, pageContext, location }) => {
 
-  const {  nom, teaser, content, slogan, diaporama, encart,seoMetaTags, backgroundImage} = data.spectacle;
+  const {  nom, teaser, content, slogan, diaporama, encart,seoMetaTags, backgroundImage, soutiens} = data.spectacle;
 /*
   const prevRef = useRef(null);
   const nextRef = useRef(null);*/
@@ -425,7 +425,7 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
                 />
               }
 
-    
+            <br/>   
            <h2>Les personnages</h2>
            <ListePersonnages>
               {(data.spectacle.personnages.length > 0) &&
@@ -435,7 +435,10 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
               
               )}
             </ListePersonnages>
-                  
+               <br/>   
+            <div dangerouslySetInnerHTML={{__html:soutiens}} />
+
+
             </div>
           
             
@@ -485,6 +488,7 @@ export const projectQuery = graphql`
       slogan
       teaser
       encart
+      soutiens
       diaporama {
         gatsbyImageData (
         

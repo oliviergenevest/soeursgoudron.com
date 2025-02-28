@@ -62,9 +62,9 @@ const FooterRight = styled.div`
 
 const Footer= ({ location }) => {
 
-  const today = new Date();
+  /*const today = new Date();
   const year = today.getFullYear();
-
+*/
 
   const data = useStaticQuery(graphql`
     query footer {

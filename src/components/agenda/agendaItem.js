@@ -86,7 +86,7 @@ const AgendaItem = ({item, path = '', theme = 'dark', displayName = false}) => {
               {displayName && 
                 <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2rem'}}>
                   <Link to ={path + item.spectacle.slug}>{item.spectacle.nom}</Link>  &gt;  
-                </AgendaItemProjet>
+                </AgendaItemProjet> 
                
                 }
               <AgendaItemVille>{item.ville}</AgendaItemVille>

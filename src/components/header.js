@@ -96,7 +96,6 @@ const SubMenu = styled.ul`
 
 const MenuItem = styled.li`
   position: relative;
-  //text-transform: uppercase;
   color: ${colors.dark};
   &:hover {
     color: ${colors.dark};
@@ -111,64 +110,27 @@ const MenuItem = styled.li`
 const LinkHeader = styled(props => <Link {...props} />)`
   position:relative;
   color: ${colors.dark};
- /* &:hover {
-    color: ${colors.blue};
-  }*/
+ 
 
   ${font.navigationItem}
   &.active {
     color: ${colors.blue};
     font-weight:700;
   }
-  /*
-  &:not(.with_submenu):before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: ${props => (props.selected ?"50%": 0 )};
-    bottom: -.65rem;
-    background-color: #F0F3D3;
-    border-radius:3px;
-    width: 30px;
-    height: 1px;
-   
-    opacity: ${props => (props.selected ? 1: 0 )};
-    transform:translateX(${props => (props.selected ?"-50%": 0 )});
-  }
-
-   &:not(.with_submenu):hover:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    border-radius:8px;
-    bottom: -.65rem;
-    background-color: ${colors.blue};
-   
-    width: 90%;
-    height: 2px;
-    transform:translateX(-50%);
-    transition: all 0.25s;   
-    opacity: 1;
-  }*/
 
     
   &:not(.with_submenu):hover { 
-    background: url(https://www.datocms-assets.com/144438/1730974893-group-2.png) bottom left no-repeat;
+    background: url("https://www.datocms-assets.com/144438/1730974893-group-2.png") bottom left no-repeat;
     background-size: 100% 5px;
     padding-bottom: 6px;
   }
-
-
 
 `;
 
 const SubLinkHeader = styled(props => <Link {...props} />)`
   position:relative;
   color: ${colors.dark};
-  /*&:hover {
-    color: ${colors.blue};
-  }*/
+ 
 
   ${font.navigationItem}
   &.active {
@@ -319,9 +281,6 @@ export default function Header({ location }) {
                     slug
                     titre
                   }
-
-                 
-                 
                 } 
                 
                 treeChildren {
@@ -341,7 +300,7 @@ export default function Header({ location }) {
     }
   `)
 
-//  console.log(data.allDatoCmsNavigation.nodes)
+  console.log(data.allDatoCmsNavigation.nodes)
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false) // mobile menu closed by default
   const MenuAnimation = useSpring({
