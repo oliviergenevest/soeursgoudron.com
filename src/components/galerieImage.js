@@ -50,7 +50,7 @@ const Image =   styled.div`
 
  
 const GalerieImage = ({images}) => {
-  console.log("images",images)
+  //console.log("images",images)
   const [index, setIndex] = useState(-1);
 
 
@@ -62,12 +62,12 @@ const GalerieImage = ({images}) => {
         srcset:asset.gatsbyImageData.images.fallback.srcSet
     } 
 })
-  console.log("items : " , items)
+ // console.log("items : " , items)
  
 
   return (
   
-     <><span>Galerie</span>
+     <>
       <RowsPhotoAlbum
         photos={items}
         targetRowHeight={250}

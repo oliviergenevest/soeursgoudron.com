@@ -300,7 +300,7 @@ export default function Header({ location }) {
     }
   `)
 
-  console.log(data.allDatoCmsNavigation.nodes)
+ // console.log(data.allDatoCmsNavigation.nodes)
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false) // mobile menu closed by default
   const MenuAnimation = useSpring({
