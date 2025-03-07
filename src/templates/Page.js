@@ -12,6 +12,7 @@ import Video from '../components/video';
 
 import Agenda from '../components/agenda/agenda';
 import ContactItem from '../components/ContactItem';
+import GalerieImage from '../components/galerieImage';
 import Personnage from '../components/personnage';
 
 import BtnRounded from '../components/buttons/ButtonRounded';
@@ -44,7 +45,7 @@ const PageInnerProject = styled.div`
   grid-template-areas: "main" "encart";
   grid-template-columns:  minmax(0, 2fr) minmax(350px, 1fr) ;
   grid-gap: 5rem;
-align-items: start;
+  align-items: start;
   ${mq.tablet` 
   grid-template-columns: 1fr;
   grid-template-columns:minmax(0, 1fr);
@@ -121,6 +122,9 @@ const Page = ({ data, pageContext, location }) => {
 
                    
 
+                    if (record.__typename === "DatoCmsGalerieImage") {
+                      return <GalerieImage images={record.images} />
+                    }
 
                     if (record.__typename === "DatoCmsImage") {
                       return <GatsbyImage image={record.image.gatsbyImageData} alt=""/>
@@ -187,7 +191,16 @@ export const projectQuery = graphql`
                 width:770
               )
             } 
-          }         
+          }      
+          ...on DatoCmsGalerieImage    {
+            id:originalId
+            images {
+            gatsbyImageData (
+                width:770
+              )
+            
+            }
+          }
           ...on DatoCmsBouton {
             id: originalId
             texte

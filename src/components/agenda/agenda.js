@@ -50,8 +50,8 @@ export default function Agenda({ settings }) {
   console.log("settings :  ", settings)
   //console.log("toutes les dates:", data.allDatoCmsAgenda.nodes)
   const dates = data.allDatoCmsAgenda.nodes
-  let filteredDates = dates.filter(date => date.isFuture === !settings.datesPassees);
-//console.log(filteredDates);
+  let filteredDates = dates.filter(date => date.isFuture === !datesPassees).slice(0,nombreDeDates);
+//console.log(filteredDates); 
 
 
   return (
