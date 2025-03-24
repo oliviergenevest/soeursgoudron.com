@@ -198,7 +198,7 @@ export const projectQuery = graphql`
               nom
               teaser
               slogan
-              featured
+              
               diaporama {
                 gatsbyImageData (
                 

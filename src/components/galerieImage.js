@@ -50,7 +50,7 @@ const Image =   styled.div`
 
  
 const GalerieImage = ({images}) => {
-  //console.log("images",images)
+ // console.log("images",images)
   const [index, setIndex] = useState(-1);
 
 
@@ -59,10 +59,11 @@ const GalerieImage = ({images}) => {
     return {src: asset.gatsbyImageData.images.fallback.src,
         width:asset.gatsbyImageData.width,
         height:asset.gatsbyImageData.height,
-        srcset:asset.gatsbyImageData.images.fallback.srcSet
+        srcset:asset.gatsbyImageData.images.fallback.srcSet,
+        alt:asset.alt
     } 
 })
- // console.log("items : " , items)
+  //console.log("items : " , items)
  
 
   return (

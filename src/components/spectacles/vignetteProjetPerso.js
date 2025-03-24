@@ -151,7 +151,7 @@ const VignetteProjetPerso = ({item}) => {
 
       // manage autoplay on hover
           const instance = swiperInstance.current;
-          console.log("useEffect mouse enter leave")
+        //  console.log("useEffect mouse enter leave")
          
           instance.addEventListener('mouseEnter', handleMouseEnter);
           instance.addEventListener('mouseLeave', handleMouseLeave);

@@ -44,7 +44,7 @@ const Image =   styled.div`
 
  
 const ContactItem = ({data}) => {
-  console.log(data)
+  //console.log(data)
   return (
   
         <ItemWrapper >

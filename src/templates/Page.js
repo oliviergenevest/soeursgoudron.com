@@ -195,6 +195,7 @@ export const projectQuery = graphql`
           ...on DatoCmsGalerieImage    {
             id:originalId
             images {
+            alt
             gatsbyImageData (
                 width:770
               )
@@ -237,7 +238,7 @@ export const projectQuery = graphql`
               nom
               teaser
               slogan
-              featured
+              
               diaporama {
                 gatsbyImageData (
                 
