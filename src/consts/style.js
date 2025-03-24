@@ -117,7 +117,7 @@ export const font = {
             word-break: break-word;
             text-align:justify;
             @media screen and (max-width: ${mQueryPoint.tablet}) {
-              font-size: 1.6rem;
+              font-size: 1.8rem;
             }
 
           `,

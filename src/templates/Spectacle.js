@@ -52,9 +52,11 @@ const ColEncart = styled.div`
 
   background-color: #f8f8f8;
   padding:3.5rem;
-  ${mq.tabletSmall` 
+  ${mq.tablet`
+    margin-top:4rem; 
     padding:2rem;
     grid-area: encart;
+    background-color: #deddf0;
   `}
 
 `
@@ -68,8 +70,14 @@ margin-left:-4rem;
 margin-right:-4rem;
 margin-top:-4rem;
 margin-bottom:12rem; 
+${mq.tablet` 
+   
+    margin-bottom:4rem; 
+  `}
+
 ${mq.tabletSmall` 
     width:calc(100% + 4rem);
+    margin-bottom:2rem; 
   `}
 
 
@@ -81,7 +89,8 @@ ${mq.tabletSmall`
  }
   .swiper-slide .gatsby-image-wrapper  {
      transition:all .4s ease;
-     height:522px;
+     //height:522px; //old line
+     height:auto; //new line
   }
   .swiper-slide-active .gatsby-image-wrapper {
     transition:all .4s ease;
@@ -214,8 +223,8 @@ const TeaserSpectacle  = styled.div`
   margin-top: 1.6rem;*/
  
   ${mq.tabletSmall` 
-   text-align:left;
-   max-width:100%;
+      text-align:left;
+      max-width:100%;
   `}
   
 `
@@ -500,7 +509,7 @@ export const projectQuery = graphql`
                 crop: "focalpoint",
                 fit:"crop" 
               }
-        )
+        ) 
       }
       teaser 
       content {
