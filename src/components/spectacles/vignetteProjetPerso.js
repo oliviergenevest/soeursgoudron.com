@@ -192,7 +192,7 @@ const VignetteProjetPerso = ({item}) => {
       <ItemWrapper to={`/spectacles/${item.slug}`} className={''} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
     
             <Swiper
-             onSlideChange={() => console.log('slide change')}
+           //  onSlideChange={() => console.log('slide change')}
               ref={swiperInstance}
               loop= {1}
               modules={[ Autoplay, EffectFade]}

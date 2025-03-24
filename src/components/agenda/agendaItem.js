@@ -81,7 +81,9 @@ const AgendaItem = ({item, path = '', theme = 'dark', displayName = false}) => {
             */}
             <div style={{'lineHeight':'2rem','flexGrow':'1'}}> 
               <AgendaItemMois theme={theme}>
-                {format(new Date(item.dateDebutEvenement), 'dd LLL yyyy', {locale: fr})}
+               { !item.dateFinEvenement ?        format(new Date(item.dateDebutEvenement), 'dd LLL yyyy', {locale: fr}) :
+                format(new Date(item.dateDebutEvenement), 'dd LLL', {locale: fr})+  ' au ' + format(new Date(item.dateFinEvenement), 'dd LLL yyyy', {locale: fr})
+               }
               </AgendaItemMois>&nbsp;|&nbsp;  
               {displayName && 
                 <AgendaItemProjet as="span"  theme={theme} style={{'lineHeight':'2rem'}}>
