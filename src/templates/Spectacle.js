@@ -336,8 +336,12 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
             
             
             breakpoints={{
-              // when window width is >= 640px
               640: {
+                slidesPerView: 1.5,
+                spaceBetween : 2,
+              },
+              // when window width is >= 7840px
+              784: {
                 slidesPerView: 2,
                 spaceBetween : 2,
               },
