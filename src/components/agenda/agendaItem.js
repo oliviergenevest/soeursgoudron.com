@@ -63,8 +63,13 @@ const AgendaItemContent =   styled.div`
   gap:1rem;
   width: 100%;
   & p { text-align:left;font-size:1.6rem;}
-  & a:hover {
-  text-decoration:underline;
+  & a {
+    color:black;
+    text-decoration:underline;
+  }
+  &  a:hover {
+    color:black;
+  text-decoration:none;
   }
 `
 

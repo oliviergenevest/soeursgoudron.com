@@ -12,6 +12,7 @@ import Boop from '../components/boop';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import {StructuredText} from "react-datocms";
 import Video from '../components/video';
+import DoubleVideo from '../components/doublevideo';
 import Album from '../components/album';
 import {Reveal} from "react-awesome-reveal"
 import { fadeInDown, fadeInUp } from "../style/animations"
@@ -421,7 +422,17 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
                       //videoSrcURL={record.video.url.replace('watch?v=', 'embed/')}
                       videoTitle={record.video.title}
                       />
-                  }
+                    }
+
+                    if (record.__typename === "DatoCmsDoublevideo") {
+                      return  <DoubleVideo
+                      video1SrcURL={record.video1.url}
+                      video2SrcURL={record.video2.url}
+                      //videoSrcURL={record.video.url.replace('watch?v=', 'embed/')}
+                      video1Title={record.video1.title}
+                      video2Title={record.video2.title}
+                      />
+                    }
                   
 
                     return (
@@ -538,7 +549,18 @@ export const projectQuery = graphql`
             video {
               url
             }
-          }         
+          }    
+            
+          ...on DatoCmsDoublevideo {
+            id: originalId
+            video1 {
+              url
+            }
+            video2 {
+            url
+            }
+          }    
+
           ...on DatoCmsReadmoreTexte {
            ...ReadmoreTexte
 
