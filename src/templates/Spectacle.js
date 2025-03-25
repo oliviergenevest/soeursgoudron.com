@@ -347,6 +347,11 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
               },
               // when window width is >= 1024px
               1024: { 
+                slidesPerView: 2.2,
+                spaceBetween : 3,
+              },
+               // when window width is >= 1290px
+               1290: { 
                 slidesPerView: 2.5,
                 spaceBetween : 3,
               },

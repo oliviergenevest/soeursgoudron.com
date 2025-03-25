@@ -30,7 +30,23 @@ export default function Agenda({ settings }) {
  const { afficherLeNomDuSpectacle, nombreDeDates, datesPassees } = settings
   const data = useStaticQuery(graphql`
     query agenda {
-        allDatoCmsAgenda( sort: {dateDebutEvenement: ASC} ) 
+        futures:allDatoCmsAgenda( filter: {isFuture: {eq: true}}, sort: {dateDebutEvenement: ASC} ) 
+        {
+            nodes {
+                id 
+                isFuture 
+                details
+                ville
+                dateDebutEvenement
+                dateFinEvenement
+                spectacle {
+                    nom
+                    slug 
+                } 
+            }
+        }
+           
+       passees:allDatoCmsAgenda(filter: {isFuture: {eq: false}}, sort: {dateDebutEvenement: DESC} ) 
         {
             nodes {
                 id 
@@ -47,11 +63,15 @@ export default function Agenda({ settings }) {
         }
     }
   `)
-  //console.log("settings :  ", settings)
+  console.log("settings :  ", settings)
   //console.log("toutes les dates:", data.allDatoCmsAgenda.nodes)
-  const dates = data.allDatoCmsAgenda.nodes
-  let filteredDates = dates.filter(date => date.isFuture === !datesPassees).slice(0,nombreDeDates);
+  //let filteredDates = dates.filter(date => date.isFuture === !datesPassees).slice(0,nombreDeDates);
 //console.log(filteredDates); 
+
+let filteredDates = datesPassees ? data.passees.nodes :  data.futures.nodes;
+
+const datesToDisplay = nombreDeDates > 0 ? filteredDates.slice(0,nombreDeDates) : filteredDates;
+//console.log(datesToDisplay); 
 
 
   return (
@@ -60,7 +80,7 @@ export default function Agenda({ settings }) {
         <AgendaListWrapper>
                 
         {
-        filteredDates.map( (item,i) => {
+        datesToDisplay.map( (item,i) => {
             return (
                 <AgendaItem key={i} item={item} displayName={afficherLeNomDuSpectacle} path='../spectacles/'/>   
             )} 
