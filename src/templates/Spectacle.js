@@ -184,6 +184,7 @@ const TitleSpectacleWrapper  = styled.div`
     position:relative;
     border-radius:0;
     left:0;
+   
   `}
 `
 
@@ -281,6 +282,10 @@ const TitleSplash  = styled.div`
   padding:3.2rem;
   z-index:1;
   border-radius:0.8rem;
+
+  ${mq.mobile` 
+      background: transparent;
+  `}
 `
 
 
@@ -333,7 +338,7 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
             slidesPerView={1}
             keyboard={{enabled:true,}}
             grabCursor
-            
+            loop= {true}
             
             breakpoints={{
               640: {
