@@ -312,8 +312,7 @@ ref.current?.scrollIntoView({behavior: 'smooth'});
             <Reveal keyframes={fadeInUp} ><TitleSpectacleTop>{nom}</TitleSpectacleTop></Reveal>
             <Reveal keyframes={fadeInDown} ><div dangerouslySetInnerHTML={{ __html:slogan }} /></Reveal>
      
-              <div className="arrow" onClick={handleClick}  role="button" 
-     tabIndex={0}  aria-label="Découvrir le spectacle">
+              <div className="arrow" onClick={handleClick}  role="button"  tabIndex={0}  aria-label="Découvrir le spectacle">
                 <div className="arrow-top"></div>
                 <div className="arrow-bottom"></div>
               </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPlayer from 'react-player'
-import { Flex, Grid2Col } from "./Elements";
+import { Grid2Col } from "./Elements";
 
 
 const DoubleVideo = ({ video1SrcURL, video1Title, video2SrcURL, video2Title,...props }) => (
