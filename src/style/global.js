@@ -91,7 +91,11 @@ strong {
   left: 0;
   height:100%;
 }
+ 
+p + .player-wrapper {
 
+  margin-top:3rem;
+}
 
 .player-wrapper {
   position: relative;

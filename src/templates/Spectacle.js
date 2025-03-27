@@ -285,6 +285,7 @@ const TitleSplash  = styled.div`
 
   ${mq.mobile` 
       background: transparent;
+      text-shadow: 0 0 5px #fff;
   `}
 `
 
