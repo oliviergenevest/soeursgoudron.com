@@ -51,6 +51,7 @@ const Wrapper = styled.div`
 `;
 
 const HeaderInner = styled.nav`
+position: relative;
   display: flex;
   width: calc( 100% - 6.4rem );
   justify-content: space-between;
@@ -172,6 +173,7 @@ const SubLinkHeader = styled(props => <Link {...props} />)`
 const LogoLink = styled(Link)`
  
   height:100%;
+
  padding-bottom:0;
    ${mq.mobile`
       img { 
@@ -321,10 +323,11 @@ export default function Header({ location }) {
       <HeaderInner>
         <LogoLink to="/" title="Retour à l'accueil" >
        {/*  <Boop scale={1.01} timing={200}>*/}
-          <StaticImage src="../images/Logo_SG_B_Header.jpg" alt="Cie Les Soeurs Goudron" />
+          <StaticImage src="../images/Logo_SG_B_Header.jpg" quality={100} alt="Cie Les Soeurs Goudron" />
       {/*  </Boop> */}
         </LogoLink>
        
+      
         <MainMenu>
 
           {data.allDatoCmsNavigation.nodes.map( item => {
