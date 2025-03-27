@@ -1,6 +1,6 @@
  # Redirect all traffic from your Netlify subdomain to your primary domain:
  # uncomment the line below
-# https://soeursgoudron.netlify.app/*   https://soeursgoudron.com/:splat   301!
+ https://soeursgoudron.netlify.app/*   https://soeursgoudron.com/:splat   301!
 # Redirect with a 301 (permanent) : uncomment the following lines
 # /index.html         /              301
 # /banann-jug.html /artistes/banan-n-jug/ 301
