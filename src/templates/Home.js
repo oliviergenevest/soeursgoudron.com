@@ -85,7 +85,7 @@ const Home = ({ data, pageContext, location }) => {
       <Seo meta={seoMetaTags} />
       <HomeSplash>
 
-        <GatsbyImage image={data.backgroundhome.gatsbyImageData} className="bg_image" alt="Logo Compagnie Les Soeurs Goudron"/>
+        <GatsbyImage image={data.backgroundhome.gatsbyImageData} className="bg_image" alt="Compagnie Les Soeurs Goudron"/>
                <GatsbyImage image={data.logo.gatsbyImageData} className="logo" alt="Logo Compagnie Les Soeurs Goudron"/>
 
      
